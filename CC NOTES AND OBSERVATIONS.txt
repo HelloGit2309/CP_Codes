@@ -1,0 +1,65 @@
+// Akash Kumar
+// These are my personal notes from the experience of various CP problems
+
+1.> Minimum number of parts N can be divided so that its pieces can be combined to form any number from 1 to N = log2(N) + 1;
+   
+	FOR EG:- N = 5;
+		5 -> 1,2,2  (3 Parts)
+		1 = 1
+  		2 = 2
+		3 = 1 + 2
+		4 = 2 + 2
+		5 = 1 + 2 + 2
+2.> If there is a set of number and we have to find an optimal number (say x), such that sum of absolute differences of the nummbers of set
+from x is minimum. Then that optimal number x is median of that sorted set.
+
+	FOR EG:- Given a sorted array arr of size n, where i denotes index of that array
+		 F(x) = MIN{ summation(abs(arr[i] - x) }   where, 1 <= i <= n and x is median of array arr
+			
+3.> If we are given an array all initially zero. Now we are given Q querries with range updates in the array then one way is to use Lazy Propagation in segment trees and the other
+way is below.
+	
+	FOR EG:- Suppose our array arr[] = 0 0 0 0 0 0 (6 elements)
+		Now 3 querries
+		update 100 in range [1,3]
+		update 50 in range [2,5]
+		update 10 in the range [5,6]
+		then final array is
+		100 150 150 50 60 10
+	
+		Other method of doing it is:-
+		suppose we have to update X in the range [a,b], then update X in arr[a] and -X in arr[b+1]
+		and then use prefix sum of the array to find final array
+		
+		Reference: https://www.geeksforgeeks.org/constant-time-range-add-operation-array/
+		 
+		Overall time complexity of this algo is T(Q + N), where Q is the no. of querries and N is the size of array
+
+
+4.>        ********* TIP := If any formula is given in a DP question then try to deduce and simplify that formula and then think of the approach *********
+
+5.> Suppose we have two numbers A and B
+	where, A = p1^a1 * p2^a2 * p3^a3 * p4^a4 ..... 		where p1, p2, p3 are prime factors of A
+	       B = q1^b1 * q2^b2 * q3^b3 * q4^b4 .....		where q1, q2, q3 are prime factors of B
+	then, numbers 	G = p1^(a1%2) * p2^(a2%2) * p3^(a3%2) * p4^(a4%2) .....
+		 and  	H = q1^(b1%2) * q2^(b2%2) * q3^(b3%2) * q4^(b4%2) .....
+
+		if(G == H) then this means product of numbers A and B will give a number which is a perfect square.
+
+6.> If gcd(a,b) = 1 then:
+
+	gcd(a*b,c) = gcd(a,c)*gcd(b,c)
+
+	otherwise: 	 gcd(a*b,c) = gcd(gcd(a,c)*gcd(b,c),c)
+
+7.> If diophantene equation: ax + by = c has solution then c must be divisible by gcd(a,b)
+		
+8.> gcd(a,b) = gcd(a-b,b) = gcd(a%b,b) where a >= b
+
+9.> Burnside Lemma: It is used to count distinct objects w.r.t to symmetry.
+
+	Ref: https://www.geeksforgeeks.org/orbit-counting-theorem-or-burnsides-lemma/
+
+10.> For small linear recurrence relation we can use Matrix Exponentiation to solve for nth term in O(log(n)*k^3)
+	Linear Recurrence:  F(n) = C1.F(n-1) + C2.F(n-2) + C3.F(n-3) + .... + Ck.F(n-k)
+
