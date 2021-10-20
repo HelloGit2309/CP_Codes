@@ -62,4 +62,14 @@ way is below.
 
 10.> For small linear recurrence relation we can use Matrix Exponentiation to solve for nth term in O(log(n)*k^3)
 	Linear Recurrence:  F(n) = C1.F(n-1) + C2.F(n-2) + C3.F(n-3) + .... + Ck.F(n-k)
+	
+11.> Area of the n sided regular polygon is given by A = 1/2 * p * a , 		
+						where p = perimeter of polygon
+						a = length of apothem .i.e., perpendicular line segment from centre of polygon to a side
+		On solving further, 	A = l*l*n / 4tan(pi/n) 	, 	where l = length of side, n = number of sides
 
+12.> According to Pick's theorem, Area of polygon with integer coordinate vertices A = i + b/2 - 1
+										where, i = integer coordinates lying strictly inside the polygon
+										       b = the number of points lying on polygon sides
+		Ref: https://cp-algorithms.com/geometry/picks-theorem.html								       
+										      
