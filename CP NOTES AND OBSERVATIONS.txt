@@ -93,6 +93,8 @@ way is below.
 	=> 8*10 + 0 = 80 (ans)
     
     Problem Based on mixed number system : https://codeforces.com/problemset/problem/1620/C
-	  
+
+14.> Factorial Number System for finding Kth lexicographical permutation efficiently:
+	https://stemhash.com/efficient-permutations-in-lexicographic-order/
     
 										      
