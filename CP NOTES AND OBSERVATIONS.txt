@@ -71,5 +71,28 @@ way is below.
 12.> According to Pick's theorem, Area of polygon with integer coordinate vertices A = i + b/2 - 1
 										where, i = integer coordinates lying strictly inside the polygon
 										       b = the number of points lying on polygon sides
-		Ref: https://cp-algorithms.com/geometry/picks-theorem.html								       
+		Ref: https://cp-algorithms.com/geometry/picks-theorem.html	
+13.> Mixed Base Number System
+    Suppose there are 3 places _ _ _ . 
+    We can fill 0 to x-1 numbers in the first place, 0 to y-1 numbers in the second place and 0 to z-1 numbers in the third place.
+    In other words first place has base x, second place has base y and third place has base z.
+    So these 3 places can represent x*y*z numbers .i.e., numbers from 0 to x*y*z-1 .
+    
+    If I have a number = (a)z(b)y(c)x (a to base z, b to the base y and c to the base x).
+    In decimal system we can write above number as (a*y+b)*x + c.
+    
+    For eg:- if we want to represent a decimal number 80 in three places whose bases are 10,7,5 (right to left) [_(5) _(7) _(10)],
+    then the 1st place = 80%10 = 0 (80/10 = 8)
+    	     2nd place = 8%7 = 1 (8/7 = 1)
+	     3rd place = 1%5 = 1 (1/5 = 0)
+	  or (80) base 10 = (1)5 (1)7 (0)10
+	
+	If we verify 110 as 80 in decimal, we can calculate it as
+	=> 0*5 + 1 = 1
+	=> 1*7 + 1 = 8
+	=> 8*10 + 0 = 80 (ans)
+    
+    Problem Based on mixed number system : https://codeforces.com/problemset/problem/1620/C
+	  
+    
 										      
