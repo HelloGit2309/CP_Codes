@@ -53,6 +53,7 @@ pair<int, int> root(pair<int, int> x, vector<vector<pair<int, int>>> &par)
 {
 	while (x != par[x.first][x.second])
 	{
+		// Path Compression
 		par[x.first][x.second] = par[par[x.first][x.second].first][par[x.first][x.second].second];
 		x = par[x.first][x.second];
 	}
@@ -64,6 +65,7 @@ void join(pair<int, int> a, pair<int, int> b, vector<vector<pair<int, int>>> &pa
 	pair<int, int> q = root(b, par);
 	if (p == q)
 		return;
+	// Weight Balanced
 	if (w[p.first][p.second] >= w[q.first][q.second])
 	{
 		par[q.first][q.second] = p;
